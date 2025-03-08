@@ -1,0 +1,119 @@
+/* General Page Styling */
+body {
+    background-color: #222;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+/* Game Board Styling */
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-gap: 10px;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.square {
+    width: 100px;
+    height: 100px;
+    background-color: #333;
+    text-align: center;
+    line-height: 100px;
+    font-size: 2rem;
+    border-radius: 10px;
+    transition: 0.3s;
+    cursor: pointer;
+    font-weight: bold;
+    user-select: none;
+    border: 2px solid transparent;
+}
+
+    /* Glowing effect on hover */
+    .square:hover {
+        box-shadow: 0 0 10px cyan;
+    }
+
+/* Glowing X and O */
+.glow-x {
+    color: cyan;
+    text-shadow: 0 0 10px cyan, 0 0 20px cyan;
+}
+
+.glow-o {
+    color: magenta;
+    text-shadow: 0 0 10px magenta, 0 0 20px magenta;
+}
+
+/* Winning line effect */
+.win-line {
+    background-color: rgba(255, 255, 0, 0.3);
+    box-shadow: 0 0 15px yellow;
+    border: 2px solid yellow;
+}
+
+/* Scoreboard */
+.scoreboard {
+    text-align: left;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #333;
+    width: 200px;
+    margin: auto;
+}
+
+/* Buttons */
+button {
+    margin: 10px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#resetGame {
+    background-color: orange;
+    color: black;
+}
+
+    #resetGame:hover {
+        box-shadow: 0 0 10px orange;
+    }
+
+#resetScoreboard {
+    background-color: red;
+    color: white;
+}
+
+    #resetScoreboard:hover {
+        box-shadow: 0 0 10px red;
+    }
+
+/* Game Mode Buttons */
+#aiMode, #multiMode {
+    background-color: dodgerblue;
+    color: white;
+}
+
+    #aiMode:hover, #multiMode:hover {
+        box-shadow: 0 0 10px dodgerblue;
+    }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .board {
+        grid-template-columns: repeat(3, 80px);
+    }
+
+    .square {
+        width: 80px;
+        height: 80px;
+        line-height: 80px;
+        font-size: 1.5rem;
+    }
+}

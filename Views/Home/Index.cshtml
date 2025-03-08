@@ -1,0 +1,38 @@
+﻿@{
+    ViewData["Title"] = "Tic Tac Toe";
+}
+
+<div class="container">
+    <h1 class="text-center text-light">Tic Tac Toe</h1>
+
+    <div class="row justify-content-center">
+        <!-- Scoreboard -->
+        <div class="col-md-3 text-light">
+            <h3>Scoreboard</h3>
+            <p>X Wins: <span id="xWins">0</span></p>
+            <p>O Wins: <span id="oWins">0</span></p>
+            <p>Draws: <span id="draws">0</span></p>
+            <button id="resetScoreboard" class="btn btn-danger w-100">Reset Scoreboard</button>
+
+            <!-- Game Mode Selection -->
+            <h4 class="mt-4">Game Mode</h4>
+            <button id="aiMode" class="btn btn-primary w-100 mb-2">Play vs AI</button>
+            <button id="multiMode" class="btn btn-success w-100">Multiplayer</button>
+        </div>
+
+        <!-- Game Board -->
+        <div class="col-md-6 text-center">
+            <div id="gameBoard" class="board">
+                @for (int i = 0; i < 9; i++)
+                {
+                    <div class="square" onclick="makeMove(@i)"></div>
+                }
+            </div>
+            <button id="resetGame" class="btn btn-warning mt-3 w-100">Restart Game</button>
+        </div>
+    </div>
+</div>
+
+<!-- Include JavaScript Files (Ensure correct paths) -->
+<script src="~/lib/signalr/signalr.js"></script>
+<script src="~/js/script.js"></script>
